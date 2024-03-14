@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h2>Chat Room: {{ code }}</h2>
+        <div id="messages"></div>
+        <div>
+            <input type="text" placeholder="Message" name="message" id="message" />
+            <button type="button" name="send" id="send-btn" onClick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block js %}
+    <script src="../static/js/sendMessage.js"></script>
+{% endblock js %}

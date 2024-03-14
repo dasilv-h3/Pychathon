@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="" method="post" class="form_container">
+        <h3>Entrez dans le salon</h3>
+        <div>
+            <label for="username">Nom :</label>
+            <input type="text" placeholder="Choisissez un pseudo" name="username" />
+        </div>
+        <div class="join">
+            <input type="text" placeholder="Room Code" name="code" value="{{code}}" />
+            <button type="submit" name="join">Rejoindre un salon</button>
+        </div>
+        <button type="submit" name="create" value="create">Créer un salon</button>
+        {% if error %}
+            <ul>
+                <li>{{error}}</li>
+            </ul>
+        {% endif %}
+    </form>
+{% endblock content %}
