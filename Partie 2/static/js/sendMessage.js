@@ -18,15 +18,42 @@ const sendMessage = () => {
 
 // Création du message
 const createMessage = (username, message) => {
+
+    // Faire une condition pour savoir qui envoie le msg. Pour savoir si l'utilisateur envoie ou reçois
+    // if(){
+
+    // const content = `
+    // <div class="d-flex align-items-end flex-column">
+    //     <div class="message-top">
+    //         <span>
+    //             <strong>${username}</strong>
+    //         </span>
+    //         <span>
+    //             ${new Date().toLocaleString()}
+    //         </span>
+    //     </div>
+    //     <hr class="ligne">
+    //     <div class="message-bottom">
+    //         <p> ${message} </p>
+    //     </div>
+    // </div>
+    // `;
+
+    // }else {
     const content = `
-    <div>
+    <div class="message-top-envoye">
         <span>
-            <strong>${username}</strong>: ${message}
+            <strong>${username}</strong>
         </span>
         <span>
             ${new Date().toLocaleString()}
         </span>
     </div>
+    <hr class="ligne">
+    <div class="message-bottom-envoye">
+        <p> ${message} </p>
+    </div>
     `;
+    // }
     messages.innerHTML += content;
 };

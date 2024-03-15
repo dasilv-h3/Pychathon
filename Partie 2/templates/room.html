@@ -1,17 +1,24 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div>
+    <h2 class="d-flex justify-content-center mt-4">Chat Room: {{ code }}</h2>
+    <hr class="mb-5">
+    <div id="messages"></div>
+
     <div>
-        <h2>Chat Room: {{ code }}</h2>
-        <div id="messages"></div>
-        <div>
-            <input type="text" placeholder="Message" name="message" id="message" />
-            <button type="button" name="send" id="send-btn" onClick="sendMessage()">Send</button>
+        <div class="d-flex flex-row-reverse">
+            <input type="text" class="form-control w-75 p-3" placeholder="Message" name="message" id="message" />
+        </div>
+        <div class="d-flex flex-row-reverse mb-4">
+            <button type="button" class="btn btn-outline-primary mt-1" name="send" id="send-btn"
+                onClick="sendMessage()">Send</button>
         </div>
     </div>
+</div>
 
 {% endblock content %}
 
 {% block js %}
-    <script src="../static/js/sendMessage.js"></script>
+<script src="../static/js/sendMessage.js"></script>
 {% endblock js %}

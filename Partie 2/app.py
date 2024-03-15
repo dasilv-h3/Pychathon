@@ -59,6 +59,7 @@ def message(data):
         "username": session.get("username"),
         "message": data["data"]
     }
+
     send(content, to=room)
     rooms[room]["messages"].append(content)
     print(rooms[room]["messages"])

@@ -1,21 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <form action="" method="post" class="form_container">
-        <h3>Entrez dans le salon</h3>
-        <div>
-            <label for="username">Nom :</label>
-            <input type="text" placeholder="Choisissez un pseudo" name="username" />
+<form action="" method="post" class="form_container">
+    <h2 class="d-flex justify-content-center mr-4">Entrez dans le salon</h2>
+    <div class="row d-flex justify-content-center">
+
+        <div class="col-10 mb-4">
+            <label for="username">Pseudo :</label>
+            <input type="text" class="form-control" placeholder="Choisissez un pseudo" name="username" />
         </div>
-        <div class="join">
-            <input type="text" placeholder="Room Code" name="code" value="{{code}}" />
-            <button type="submit" name="join">Rejoindre un salon</button>
+        <div class="col-4">
+            <h3>Créer une room</h3>
+            <button type="submit" class="btn btn-primary mt-4" name="create" value="create">Créer un salon</button>
         </div>
-        <button type="submit" name="create" value="create">Créer un salon</button>
-        {% if error %}
-            <ul>
-                <li>{{error}}</li>
-            </ul>
-        {% endif %}
-    </form>
+        <div class="col-2 d-flex justify-content-center">
+            <hr class="ligne-vertical">
+        </div>
+        <div class="col-4">
+            <h3>Rejoindre une room</h3>
+            <label for="code">Room Code :</label>
+            <input type="text" class="form-control" placeholder="Room Code" name="code" value="{{code}}" />
+            <button type="submit" class="btn btn-primary mt-4" name="join">Rejoindre un salon</button>
+        </div>
+    </div>
+    {% if error %}
+    <ul>
+        <li>{{error}}</li>
+    </ul>
+    {% endif %}
+</form>
 {% endblock content %}
