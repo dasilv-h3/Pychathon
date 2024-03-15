@@ -13,7 +13,7 @@ def receive_messages():
         while True:
             message = client_socket.recv(1024).decode("utf-8")
             if message:
-                print(f"Client: \r{message.ljust(80)}", end="")
+                print(message)
             if message.lower() == "server is shutting down. disconnecting...":
                 break
     except ConnectionResetError:
